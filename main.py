@@ -93,7 +93,10 @@ async def getCompanyMenu(name: str):
 
 
 @app.get("/{company}/menu/dish/{name}")
-async def getCompanyMenu(name: str):
-    dish = Dish(dishName="Meet", mainImg="some-link.jpg", subsectionId=5, description="Text about this dish. What the composition and blah dish. What the and blah blah blah",
+async def getDish(name: str):
+    result =[]
+    for i in range(100):
+        dish = Dish(dishName="Meet", mainImg="some-link.jpg", subsectionId=5, description="Text about this dish. What the composition and blah dish. What the and blah blah blah",
                 price=345, weight=13,parentSectionId=3)
-    return dish
+        result.append(dish)
+    return result
