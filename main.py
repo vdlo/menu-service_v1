@@ -54,8 +54,8 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/{name}")
-async def getCompany(name: str):
+@app.get("/{name}", response_model=Company)
+async def GetCompany(name: str):
     company = Company()
     company.name = name
     company.title = "Simple title, base "
