@@ -55,7 +55,7 @@ async def root():
 
 
 @app.get("/{name}")
-async def getCompany(name: str):
+async def getCompany(name: str)->Company:
     company = Company()
     company.name = name
     company.title = "Simple title, base "
