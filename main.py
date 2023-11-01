@@ -54,8 +54,8 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/{name}", response_model=Company)
-async def GetCompany(name: str):
+@app.get("/{name}")
+async def getCompany(name: str):
     company = Company()
     company.name = name
     company.title = "Simple title, base "
@@ -93,10 +93,7 @@ async def getCompanyMenu(name: str):
 
 
 @app.get("/{company}/menu/dish/{name}")
-async def getDish(name: str):
-    result =[]
-    for i in range(100):
-        dish = Dish(dishName="Meet", mainImg="some-link.jpg", subsectionId=5, description="Text about this dish. What the composition and blah dish. What the and blah blah blah",
+async def getCompanyMenu(name: str):
+    dish = Dish(dishName="Meet", mainImg="some-link.jpg", subsectionId=5, description="Text about this dish. What the composition and blah dish. What the and blah blah blah",
                 price=345, weight=13,parentSectionId=3)
-        result.append(dish)
-    return result
+    return dish
